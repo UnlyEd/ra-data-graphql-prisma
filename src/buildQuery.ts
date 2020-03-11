@@ -43,6 +43,7 @@ export const buildQueryFactory = () => (
       resource,
       aorFetchType,
       params,
+      fieldAliasResolver,
     )!;
     const query: DocumentNode = buildGqlQuery(introspectionResults)(
       resource,

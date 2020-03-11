@@ -9,7 +9,10 @@ import { RAGqlPrismaIntrospection } from './RAGqlPrismaIntrospection';
  * None are required because of default values
  */
 export declare type RAGqlPrismaOptions = {
-  buildQuery?: (introspectionResults: IntrospectionResult, fieldAliasResolver?: RAGqlPrismaFieldAliasResolver) => BuildQueryFactorySignature;
+  buildQuery?: (
+    introspectionResults: IntrospectionResult,
+    fieldAliasResolver?: RAGqlPrismaFieldAliasResolver,
+  ) => BuildQueryFactorySignature;
   introspection?: RAGqlPrismaIntrospection;
   client?: ApolloClient<any>;
   clientOptions?: ApolloClientOptions<any>;

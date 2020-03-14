@@ -153,6 +153,10 @@ const buildReferenceField = (
   );
 
   return Object.keys(inputArg).reduce((acc, key) => {
+    if (!mutationInputType) {
+      console.error(`Couldn't find a GraphQL mutation type of type "${mutationType}" for "${inputType?.name}" input type through introspection. Field "${field}" has been ignored.`);
+      return acc;
+    }
     return ((Object.keys(acc).length === 0) && inputFieldExistsForType(
       introspectionResults,
       mutationInputType!.name,
